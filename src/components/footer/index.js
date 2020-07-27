@@ -3,14 +3,20 @@ import { FooterBase } from './styles'
 
 const Footer = () => (
   <FooterBase>
-    <a href='https://www.alura.com.br/'>
-      <img src='https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg' alt='Logo Alura' />
-    </a>
+    <p>
+      Website made with reactJS by <a href='https://twitter.com/pipocaCafeinada' rel='noopener'>Jhow</a>
+    </p>
+
+    <p>
+      Curious to see how this site was created?
+      <br />
+      <a href='https://github.com/jonathan-santos/jhowflix' rel='noopener'>Access it's repository</a>
+    </p>
 
     <p>
       Proudly created during
       {' '}
-      <a href='https://www.alura.com.br/'>
+      <a href='https://www.alura.com.br/' rel='noopener'>
         Imersão React da Alura
       </a>
     </p>
