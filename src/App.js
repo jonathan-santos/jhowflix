@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Menu from './components/menu/index.jsx'
+import Menu from './components/menu'
 
 const App = () => (
   <div className='App'>

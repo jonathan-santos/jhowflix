@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ButtonLink from '../button-link/index.jsx'
+import Button from '../button'
 
 import Logo from '../../assets/img/logo.png'
 import './menu.css'
@@ -11,9 +11,9 @@ const Menu = () => (
             <img src={Logo} alt='JhowFlix logo' className='logo' />
         </a>
 
-        <ButtonLink href='/new-video'>
+        <Button as='a' href='/new-video'>
             New video
-        </ButtonLink>
+        </Button>
     </nav>
 )
 
