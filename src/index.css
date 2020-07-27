@@ -4,21 +4,23 @@
 }
 
 :root {
-  --primary: #2A7AE4;
-  --black: #000000;
-  --blackLighter: #9E9E9E;
-  --grayLight: #F5F5F5;
-  --grayMedium: #e5e5e5; 
-  --white: #FFFFFF;
-  --frontEnd: #6BD1FF;
-  --backEnd: #00C86F;
+  --primary: #3498db;
+  --secondary: #ff2d9a;
+  --black: #333333;
+  --blackLighter: #555555;
+  --grayLight: #eeeeee;
+  --grayMedium: #dddddd; 
+  --white: #FeFeFe;
+  --myFavoritePiecesOfMusic: #ff2d9a;
+  --myFavoriteTVSeries: #3498db;
+  --myFavoriteVideoGames: #FF1E56;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #141414;
+  background-color: var(--black);
 }
 
 a {

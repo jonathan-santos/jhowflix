@@ -1,24 +1,89 @@
 {
-  "categories": [
-    {
-      "title": "Front End",
-      "link": "https://www.alura.com.br/formacao-front-end",
-      "color": "#6BD1FF",
-      "extra_link": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      },
-      "videos": [
-        {
-          "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
-        },
-        {
-          "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+  "categories": [{
+      "title": "My favorite pieces of music",
+      "color": "#ff2d9a",
+      "videos": [{
+          "title": "Red Hot Chilli Peppers - Dark Necessities",
+          "url": "https://music.youtube.com/watch?v=ZICUilv4KF0&feature=share"
         },{
-          "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "title": "Gorillaz - Souk Eye",
+          "url": "https://music.youtube.com/watch?v=ag2LVnpoRpU&feature=share"
+        },{
+          "title": "The Beatles - Don't Let me Down",
+          "url": "https://youtu.be/NCtzkaL2t_Y"
+        },{
+          "title": "Tim Maia - Ela partiu",
+          "url": "https://music.youtube.com/watch?v=syqJAgTQdlU&feature=share"
+        }, {
+          "title": "Alcione - Você me tira do sério",
+          "url": "https://music.youtube.com/watch?v=Zh-YpF3I7w8&feature=share"
+        }, {
+          "title": "Warren Ellis & Nick Cave - Song for Jesse",
+          "url": "https://music.youtube.com/watch?v=bReg7IRq7Lw&feature=share"
+        }, {
+          "title": "David Bowie - Blackstar",
+          "url": "https://music.youtube.com/watch?v=kszLwBaC4Sw&feature=share"
+        }, {
+          "title": "Akira Yamaoka - This sacred line",
+          "url": "https://music.youtube.com/watch?v=r8eaQR4HEAk&feature=share"
+        }, {
+          "title": "Apparat - Goodbye",
+          "url": "https://music.youtube.com/watch?v=C2-YwsEq0-0&feature=share"
+        }, {
+          "title": "Tame Impala - Let it Happen",
+          "url": "https://music.youtube.com/watch?v=NMRhx71bGo4&feature=share"
+        }
+      ]
+    }, {
+      "title": "My favorite TV series",
+      "color": "#3498db",
+      "videos": [{
+          "title": "Dark",
+          "url": "https://www.youtube.com/watch?v=6EhDKaWLJgg"
+        },{
+          "title": "The Mentalist",
+          "url": "youtube.com/watch?v=tCpWApgVqbc"
+        },{
+          "title": "Lucifer",
+          "url": "https://www.youtube.com/watch?v=KJsdZYT-Tlk"
+        },{
+          "title": "The Boys",
+          "url": "https://www.youtube.com/watch?v=BxmSk_pv8tE"
+        }, {
+          "title": "House",
+          "url": "https://www.youtube.com/watch?v=dVlQJO4HZj0"
+        }
+      ]
+    }, {
+      "title": "My Favorite Video Games",
+      "color": "#FF1E56",
+      "videos": [{
+          "title": "Ape Escape",
+          "url": "https://www.youtube.com/watch?v=MdgWnXV4f2k"
+        },{
+          "title": "Super Mario Galaxy",
+          "url": "https://www.youtube.com/watch?v=rmN8DHZYNCg"
+        },{
+          "title": "Donkey Kong - Country Returns",
+          "url": "https://www.youtube.com/watch?v=TMhEs78Zix8"
+        },{
+          "title": "Midnight Club 3: DUB Edition Remix",
+          "url": "https://www.youtube.com/watch?v=eivnVc7yWuY"
+        }, {
+          "title": "Terraria",
+          "url": "https://www.youtube.com/watch?v=w7uOhFTrrq0"
+        }, {
+          "title": "Nier Automata",
+          "url": "https://www.youtube.com/watch?v=wJxNhJ8fjFk"
+        }, {
+          "title": "Metal Gear Solid 3: Snake Eater",
+          "url": "https://www.youtube.com/watch?v=hXUono66wxI"
+        }, {
+          "title": "Skyrim",
+          "url": "https://www.youtube.com/watch?v=JSRtYpNRoN0"
+        }, {
+          "title": "Dark Souls 2",
+          "url": "https://www.youtube.com/watch?v=U6uyuIQYlfY"
         }
       ]
     }

@@ -14,13 +14,17 @@ const App = () => (
     <BannerMain
       videoTitle={initialData.categories[0].videos[0].title}
       url={initialData.categories[0].videos[0].url}
-      videoDescription='What is Front-End?'
+      videoDescription='From the album The Getaway'
     />
 
-    <Carousel
-      ignoreFirstVideo
-      category={initialData.categories[0]}
-    />
+    {initialData.categories.map((cat, count) => (
+
+        <Carousel
+          ignoreFirstVideo={count == 0}
+          category={cat}
+        />
+    ))}
+
 
     <Footer />
   </div>
