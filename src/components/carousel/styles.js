@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Title = styled.h3`
+  margin-left: 10px;
   font-style: normal;
   font-weight: normal;
   font-size: 35px;
@@ -50,6 +51,5 @@ export const VideoCardList = styled.ul`
 export const VideoCardGroupContainer = styled.section`
   color: white;
   min-height: 197px;
-  margin-left: 5%;
   margin-bottom: 16px;
 `

@@ -11,9 +11,6 @@
   --grayLight: #eeeeee;
   --grayMedium: #dddddd; 
   --white: #FeFeFe;
-  --myFavoritePiecesOfMusic: #ff2d9a;
-  --myFavoriteTVSeries: #3498db;
-  --myFavoriteVideoGames: #FF1E56;
 }
 
 html,
@@ -31,4 +28,10 @@ a {
   min-height: calc(100vh - var(--bodyPaddingTop));
   display: flex;
   flex-direction: column;
+}
+
+.game {
+  /* width: 800px; */
+  /* height: auto; */
+  overflow: hidden;
 }

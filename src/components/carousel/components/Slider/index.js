@@ -13,19 +13,35 @@ const Container = styled.ul`
         top: 0;
         bottom: 0;
         margin: auto;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 100%;
         transform: initial;
         &:before {
+            border-radius: 100%;
+            background-color: rgba(0,0,0, 0.15);
+            color: ${props => props.arrowColor || 'initial' };
             font-size: 30px;
+            line-height: 30px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba(0,0,0, 0.4);
         }
     }
+
     .slick-prev {
-        left: 0;
+        left: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
-    .slick-new {
-        right: 16px;
+    .slick-next {
+        right: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
+
 `
 
 export const SliderItem = styled.li`
@@ -38,15 +54,16 @@ export const SliderItem = styled.li`
     }
 `
 
-const Slider = ({ children }) => (
-    <Container>
+const Slider = ({ arrowColor, children }) => (
+    <Container arrowColor={arrowColor}>
         <SlickSlider {...{
             dots: false,
-            infinite: false,
-            speed: 300,
-            centerMode: false,
+            infinite: true,
+            speed: 400,
+            centerMode: true,
             variableWidth: true,
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            focusOnSelect: true
         }}>
             {children}
         </SlickSlider>

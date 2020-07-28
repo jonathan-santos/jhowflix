@@ -19,7 +19,9 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
       target='_blank'
       style={{ borderColor: categoryColor || 'red' }}
       title={videoTitle}
-    />
+    >
+      {videoTitle}
+    </VideoCardContainer>
   )
 }
 
