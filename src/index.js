@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import Home from './pages/home';
+import NewVideo from './pages/newVideo';
+import NewCategory from './pages/newCategory';
+import Page404 from './pages/page404';
+
+import PageDefault from './components/pageDefault';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <PageDefault>
+      <Switch>
+        <Route path='/' component={Home} exact />
+        <Route path='/new-video' component={NewVideo} />
+        <Route path='/new-category' component={NewCategory} />
+        <Route component={Page404} />
+      </Switch>
+    </PageDefault>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
