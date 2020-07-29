@@ -8,12 +8,13 @@ const Main = styled.main`
     background-color: var(--black);
     color: var(--white);
     flex: 1;
+    padding: ${props => props.noPadding ? '0' : '0.5rem 30%'};
 `;
 
-const PageDefault = ({ children }) => (
+const PageDefault = ({ noPadding, children }) => (
     <>
         <Menu />
-        <Main>
+        <Main noPadding={noPadding}>
             {children}
         </Main>
         <Footer/>

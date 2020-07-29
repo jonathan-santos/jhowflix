@@ -1,6 +1,17 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 
+import PageDefault from '../../components/pageDefault'
 import FormField from '../../components/formField'
+import TableViewer from '../../components/tableViewer'
+import Button from '../../components/button'
+import Category from '../../components/category'
+
+const Form = styled.form`
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    padding: 0.5rem;
+`
 
 const NewCategory = () => {
     const initialCategory = {
@@ -27,21 +38,25 @@ const NewCategory = () => {
     }
 
     return (
-        <>
-            <h1>Register new category: {category.name || 'Initial Name'}</h1>
+        <PageDefault>
+            <h1 style={{ margin: '0.25rem' }}>Register new category: </h1>
 
-            <form onSubmit={saveNewCategory} style={{ border: `1px solid ${category.color}` }}>
+            <Category
+                title={category.name || 'Initial Name'}
+                color={category.color}
+                style={{ marginTop: 0 }}
+            />
+
+            <Form onSubmit={saveNewCategory}>
                 <FormField
                     required
                     name='name'
-                    placeholder='Type the category name'
                     value={category.name}
                     onChange={changeCategory}
                 />
 
                 <FormField
                     name='description'
-                    placeholder='Type the category description'
                     value={category.description}
                     onChange={changeCategory}
                     textarea
@@ -50,22 +65,23 @@ const NewCategory = () => {
                 <FormField
                     name='color'
                     type='color'
-                    placeholder='Type the category color'
                     value={category.color}
                     onChange={changeCategory}
                 />
 
-                <button>
+                <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }}>
                     Register
-                </button>
-            </form>
+                </Button>
+            </Form>
 
-            <ul>
-                {categories.map((category, count) => (
-                    <li key={count}>{category.name}, {category.description}, {category.color}</li>
-                ))}
-            </ul>
-        </>
+
+            {categories.map(cat => (
+                <>
+                    <Category title={cat.name} color={cat.color} />
+                    <br />
+                </>
+            ))}
+        </PageDefault>
     )
 }
 

@@ -1,8 +1,10 @@
 import React from 'react'
 
-import { VideoCardGroupContainer, Title, ExtraLink } from './styles'
+import { VideoCardGroupContainer } from './styles'
 import VideoCard from './components/VideoCard'
 import Slider, { SliderItem } from './components/Slider'
+
+import Category from '../category'
 
 const VideoCardGroup = ({ ignoreFirstVideo, category, }) => {
   const categoryTitle = category.title
@@ -13,17 +15,7 @@ const VideoCardGroup = ({ ignoreFirstVideo, category, }) => {
   return (
     <VideoCardGroupContainer>
       {categoryTitle && (
-        <>
-          <Title style={{ backgroundColor: categoryColor || 'red' }}>
-            {categoryTitle}
-          </Title>
-
-          {categoryExtraLink && 
-            <ExtraLink href={categoryExtraLink.url} target='_blank'>
-              {categoryExtraLink.text}  
-            </ExtraLink>
-          }
-        </>
+        <Category title={categoryTitle} description={categoryExtraLink} />
       )}
 
       <Slider arrowColor={categoryColor}>

@@ -1,29 +1,32 @@
 import React from 'react'
+import Field, { InputContainer, Input, FloatingLabel } from './styles'
 
-const FormField = ({ required, value, name, type, placeholder, onChange, textarea }) => (
-    <div>
-        <label htmlFor={name}>{name}:</label>
+const capitalizeWord = word => word.charAt(0).toUpperCase() + word.slice(1)
 
-        {textarea ?
-            <textarea
+const FormField = ({ required, value, name, type, onChange, textarea }) => (
+    <Field>
+        <InputContainer>
+            {type === 'color' &&
+                <label htmlFor={name}>{capitalizeWord(name)}:</label>
+            }
+
+            <Input
+                as={textarea ? 'textarea' : ''}
                 required={required}
                 name={name}
                 type={type || 'text'}
-                placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                rows={textarea ? 4 : 0}
             />
-            :
-            <input
-                required={required}
-                name={name}
-                type={type || 'text'}
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-            />
-        }
-    </div>
+
+            {type !== 'color' &&
+                <FloatingLabel className={value ? '.has-text' : ''}>
+                    {capitalizeWord(name)}
+                </FloatingLabel>
+            }
+        </InputContainer>
+    </Field>
 )
 
 export default FormField

@@ -1,27 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 2rem;
-`
-
-const Title = styled.h1`
-    margin: 0;
-    font-size: 4rem;
-`
-
-const P = styled.p`
-    margin: 0.25em 0;
-`
+import { Title, P } from './styles'
+import PageDefault from '../../components/pageDefault'
 
 const page404 = () => {
     return (
-        <Container>
+        <PageDefault>
             <Title>404</Title>
             <P>Sorry, nothing to see here...</P>
 
@@ -39,7 +24,7 @@ const page404 = () => {
             <br/>
 
             <Link to='/'>Or go to home</Link>
-        </Container>
+        </PageDefault>
     )
 }
 
