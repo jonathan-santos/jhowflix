@@ -69,7 +69,7 @@ const NewCategory = () => {
                     onChange={changeCategory}
                 />
 
-                <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }}>
+                <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
                     Register
                 </Button>
             </Form>

@@ -20,7 +20,7 @@ const Button = styled.button`
         opacity: .5;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: ${props => props.notMoveable ? '' : '800px'}) {
         & {
             position: fixed;
             left: 0;
