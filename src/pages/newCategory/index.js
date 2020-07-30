@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import PageDefault from '../../components/pageDefault'
@@ -19,7 +19,7 @@ const NewCategory = () => {
     color: '#999999'
   }
 
-  const [categories, setCategories] = useState([{ name: 'test', description: 'something', color: '#f00' }])
+  const [categories, setCategories] = useState([{ title: 'test', description: 'something', color: '#f00' }])
   const [category, setCategory] = useState(initialCategory)
 
   const changeCategory = (e) => {
@@ -36,12 +36,23 @@ const NewCategory = () => {
     setCategory(initialCategory)
   }
 
+  useEffect(() => {
+    const getCategories = async () => {
+      const URL = 'http://localhost:8080/categories'
+      const res = await window.fetch(URL)
+      const categories = await res.json()
+      setCategories(categories)
+    }
+
+    getCategories()
+  }, [])
+
   return (
     <PageDefault>
       <h1 style={{ margin: '0.25rem' }}>Register new category: </h1>
 
       <Category
-        title={category.name || 'Initial Name'}
+        title={category.title || 'Initial Name'}
         color={category.color}
         style={{ marginTop: 0 }}
       />
@@ -73,9 +84,13 @@ const NewCategory = () => {
         </Button>
       </Form>
 
+      <div>
+        Loading...
+      </div>
+
       {categories.map((cat, count) => (
         <React.Fragment key={count}>
-          <Category title={cat.name} color={cat.color} />
+          <Category title={cat.title} color={cat.color} />
           <br />
         </React.Fragment>
       ))}

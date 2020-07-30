@@ -1,0 +1,18 @@
+{
+    "categories": [{
+        "id": 1,
+        "title": "Music",
+        "description": "My favorite pieces of music, from all ages and genres",
+        "color": "#ff2d9a"
+    }, {
+        "id": 2,
+        "title": "Series",
+        "description": "My favorite TV Series, from all ages and genres",
+        "color": "#3498db"
+    }, {
+        "id": 3,
+        "title": "Video Game",
+        "description": "My favorite Videogames, from all ages and genres",
+        "color": "#FF1E56"
+    }]
+}
