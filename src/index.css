@@ -20,6 +20,11 @@ body {
   background-color: var(--black);
 }
 
+body {
+  --bodyPaddingTop: 94px;
+    padding-top: var(--bodyPaddingTop);
+}
+
 a {
   color: inherit;
 }
@@ -31,7 +36,12 @@ a {
 }
 
 .game {
-  /* width: 800px; */
-  /* height: auto; */
   overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  body {
+    --bodyPaddingTop: 40px;
+    padding-top: var(--bodyPaddingTop);
+  }
 }

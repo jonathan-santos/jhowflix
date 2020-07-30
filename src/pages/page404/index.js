@@ -21,7 +21,7 @@ const page404 = () => {
         height='545'
       />
 
-      <br/>
+      <br />
 
       <Link to='/'>Or go to home</Link>
     </PageDefault>

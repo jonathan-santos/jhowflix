@@ -73,11 +73,11 @@ const NewCategory = () => {
         </Button>
       </Form>
 
-      {categories.map(cat => (
-        <>
+      {categories.map((cat, count) => (
+        <React.Fragment key={count}>
           <Category title={cat.name} color={cat.color} />
           <br />
-        </>
+        </React.Fragment>
       ))}
     </PageDefault>
   )

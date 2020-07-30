@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
+import Main from './styles'
 
 import Menu from '../menu'
 import Footer from '../footer'
-
-import Main from './styles'
 
 const PageDefault = ({ noPadding, children }) => (
   <>
@@ -11,8 +12,17 @@ const PageDefault = ({ noPadding, children }) => (
     <Main noPadding={noPadding}>
       {children}
     </Main>
-    <Footer/>
+    <Footer />
   </>
 )
+
+PageDefault.defaultProps = {
+  noPadding: false
+}
+
+PageDefault.propTypes = {
+  noPadding: PropTypes.bool,
+  children: PropTypes.any.isRequired
+}
 
 export default PageDefault

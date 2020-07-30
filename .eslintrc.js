@@ -17,6 +17,11 @@ module.exports = {
   plugins: [
     'react'
   ],
+  settings: {
+    react: {
+      version: "16.13.1"
+    }
+  },
   rules: {
   }
 }

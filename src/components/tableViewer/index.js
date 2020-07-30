@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Table, { Header, HeaderRow, BodyRow, Data } from './styles'
 
 const TableViewer = ({ data }) => {
@@ -31,6 +33,10 @@ const TableViewer = ({ data }) => {
       </tbody>
     </Table>
   )
+}
+
+TableViewer.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default TableViewer

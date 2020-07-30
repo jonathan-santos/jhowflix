@@ -1,21 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Button from '../button'
+import Container, { Logo } from './styles'
 
-import Logo from '../../assets/img/logo.png'
-import './menu.css'
+import Button from '../../components/button'
+
+import LogoFile from '../../assets/img/logo.png'
 
 const Menu = () => (
-  <nav className='menu'>
+  <Container className='menu'>
     <Link to='/'>
-      <img src={Logo} alt='JhowFlix logo' className='logo' />
+      <Logo src={LogoFile} alt='JhowFlix logo' className='logo' />
     </Link>
 
     <Button as={Link} to='/new-video'>
             New video
     </Button>
-  </nav>
+  </Container>
 )
 
 export default Menu

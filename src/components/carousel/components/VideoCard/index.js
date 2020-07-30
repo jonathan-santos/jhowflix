@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { VideoCardContainer } from './styles'
 
 const getYouTubeId = (youtubeURL) => (
@@ -22,6 +24,12 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
       {videoTitle}
     </VideoCardContainer>
   )
+}
+
+VideoCard.propTypes = {
+  videoTitle: PropTypes.string.isRequired,
+  videoURL: PropTypes.string.isRequired,
+  categoryColor: PropTypes.string.isRequired
 }
 
 export default VideoCard

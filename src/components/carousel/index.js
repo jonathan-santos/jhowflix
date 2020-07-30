@@ -1,24 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import { VideoCardGroupContainer } from './styles'
+import Category from '../../components/category'
+
 import VideoCard from './components/VideoCard'
-import Slider, { SliderItem } from './components/Slider'
+import Slider from './components/Slider'
 
-import Category from '../category'
+import { VideoCardGroupContainer, SliderItem } from './styles'
 
 const VideoCardGroup = ({ ignoreFirstVideo, category }) => {
-  const categoryTitle = category.title
-  const categoryColor = category.color
-  const categoryExtraLink = category.extra_link
-  const videos = category.videos
+  const { title, color, extraLink, videos } = category
 
   return (
     <VideoCardGroupContainer>
-      {categoryTitle && (
-        <Category title={categoryTitle} description={categoryExtraLink} />
+      {title && (
+        <Category title={title} description={extraLink} color={color} />
       )}
 
-      <Slider arrowColor={categoryColor}>
+      <Slider arrowColor={color}>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
             return null
@@ -29,7 +28,7 @@ const VideoCardGroup = ({ ignoreFirstVideo, category }) => {
               <VideoCard
                 videoTitle={video.title}
                 videoURL={video.url}
-                categoryColor={categoryColor}
+                categoryColor={color}
               />
             </SliderItem>
           )
@@ -37,6 +36,15 @@ const VideoCardGroup = ({ ignoreFirstVideo, category }) => {
       </Slider>
     </VideoCardGroupContainer>
   )
+}
+
+VideoCardGroup.defaultProps = {
+  ignoreFirstVideo: false
+}
+
+VideoCardGroup.propTypes = {
+  ignoreFirstVideo: PropTypes.bool,
+  category: PropTypes.object.isRequired
 }
 
 export default VideoCardGroup

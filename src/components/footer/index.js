@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { FooterBase } from './styles'
 
 const Footer = () => (
@@ -10,7 +11,7 @@ const Footer = () => (
     <p>
       Curious to see how this site was created?
       <br />
-      <a href='https://github.com/jonathan-santos/jhowflix' rel='noopener'>Access it's repository</a>
+      <a href='https://github.com/jonathan-santos/jhowflix' rel='noopener'>Access it&apos;s repository</a>
     </p>
 
     <p>
