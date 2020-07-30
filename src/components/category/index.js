@@ -2,17 +2,17 @@ import React from 'react'
 import { Title, ExtraLink } from './styles'
 
 const Category = ({ title, extraLink, description, color, style }) => (
-    <>
-        <Title style={{ ...style, backgroundColor: color || 'red' }}>
-            {title}
-        </Title>
+  <>
+    <Title style={{ ...style, backgroundColor: color || 'red' }}>
+      {title}
+    </Title>
 
-        {extraLink && 
+    {extraLink &&
             <ExtraLink href={extraLink.url} target='_blank'>
-                {extraLink.text}  
+              {extraLink.text}
             </ExtraLink>
-        }
-    </>
+    }
+  </>
 )
 
 export default Category

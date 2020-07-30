@@ -19,7 +19,7 @@ const Container = styled.ul`
         &:before {
             border-radius: 100%;
             background-color: rgba(0,0,0, 0.15);
-            color: ${props => props.arrowColor || 'initial' };
+            color: ${props => props.arrowColor || 'initial'};
             font-size: 30px;
             line-height: 30px;
         }
@@ -55,19 +55,19 @@ export const SliderItem = styled.li`
 `
 
 const Slider = ({ arrowColor, children }) => (
-    <Container arrowColor={arrowColor}>
-        <SlickSlider {...{
-            dots: false,
-            infinite: true,
-            speed: 400,
-            centerMode: true,
-            variableWidth: true,
-            adaptiveHeight: true,
-            focusOnSelect: true
-        }}>
-            {children}
-        </SlickSlider>
-    </Container>
+  <Container arrowColor={arrowColor}>
+    <SlickSlider {...{
+      dots: false,
+      infinite: true,
+      speed: 400,
+      centerMode: true,
+      variableWidth: true,
+      adaptiveHeight: true,
+      focusOnSelect: true
+    }}>
+      {children}
+    </SlickSlider>
+  </Container>
 )
 
 export default Slider

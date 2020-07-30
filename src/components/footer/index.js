@@ -23,4 +23,4 @@ const Footer = () => (
   </FooterBase>
 )
 
-export default Footer;
+export default Footer

@@ -15,11 +15,11 @@ const Home = () => (
     />
 
     {initialData.categories.map((cat, count) => (
-        <Carousel
-          key={count}
-          ignoreFirstVideo={count === 0}
-          category={cat}
-        />
+      <Carousel
+        key={count}
+        ignoreFirstVideo={count === 0}
+        category={cat}
+      />
     ))}
   </PageDefault>
 )

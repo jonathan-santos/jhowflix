@@ -16,4 +16,4 @@ const YouTubeIframeResponsive = ({ youtubeID }) => {
   )
 }
 
-export default YouTubeIframeResponsive;
+export default YouTubeIframeResponsive

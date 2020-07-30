@@ -1,14 +1,13 @@
 import React from 'react'
 import { VideoCardContainer } from './styles'
 
-const getYouTubeId = (youtubeURL) => {
-  return youtubeURL
+const getYouTubeId = (youtubeURL) => (
+  youtubeURL
     .replace(
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
-}
-
+      '$7'
+    )
+)
 
 const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
   const image = `https://img.youtube.com/vi/${getYouTubeId(videoURL)}/hqdefault.jpg`
@@ -25,4 +24,4 @@ const VideoCard = ({ videoTitle, videoURL, categoryColor }) => {
   )
 }
 
-export default VideoCard;
+export default VideoCard

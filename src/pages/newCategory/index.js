@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import PageDefault from '../../components/pageDefault'
 import FormField from '../../components/formField'
-import TableViewer from '../../components/tableViewer'
 import Button from '../../components/button'
 import Category from '../../components/category'
 
@@ -14,75 +13,74 @@ const Form = styled.form`
 `
 
 const NewCategory = () => {
-    const initialCategory = {
-        name: '',
-        description: '',
-        color: '#999999'
-    }
+  const initialCategory = {
+    name: '',
+    description: '',
+    color: '#999999'
+  }
 
-    const [categories, setCategories] = useState([{ name: 'test', description: 'something', color: '#f00' }])
-    const [category, setCategory] = useState(initialCategory)
+  const [categories, setCategories] = useState([{ name: 'test', description: 'something', color: '#f00' }])
+  const [category, setCategory] = useState(initialCategory)
 
-    const changeCategory = (e) => {
-        const { name, value } = e.target
-        setCategory({
-            ...category,
-            [name]: value
-        })
-    }
+  const changeCategory = (e) => {
+    const { name, value } = e.target
+    setCategory({
+      ...category,
+      [name]: value
+    })
+  }
 
-    const saveNewCategory = (e) => {
-        e.preventDefault()
-        setCategories([...categories, category])
-        setCategory(initialCategory)
-    }
+  const saveNewCategory = (e) => {
+    e.preventDefault()
+    setCategories([...categories, category])
+    setCategory(initialCategory)
+  }
 
-    return (
-        <PageDefault>
-            <h1 style={{ margin: '0.25rem' }}>Register new category: </h1>
+  return (
+    <PageDefault>
+      <h1 style={{ margin: '0.25rem' }}>Register new category: </h1>
 
-            <Category
-                title={category.name || 'Initial Name'}
-                color={category.color}
-                style={{ marginTop: 0 }}
-            />
+      <Category
+        title={category.name || 'Initial Name'}
+        color={category.color}
+        style={{ marginTop: 0 }}
+      />
 
-            <Form onSubmit={saveNewCategory}>
-                <FormField
-                    required
-                    name='name'
-                    value={category.name}
-                    onChange={changeCategory}
-                />
+      <Form onSubmit={saveNewCategory}>
+        <FormField
+          required
+          name='name'
+          value={category.name}
+          onChange={changeCategory}
+        />
 
-                <FormField
-                    name='description'
-                    value={category.description}
-                    onChange={changeCategory}
-                    textarea
-                />
+        <FormField
+          name='description'
+          value={category.description}
+          onChange={changeCategory}
+          textarea
+        />
 
-                <FormField
-                    name='color'
-                    type='color'
-                    value={category.color}
-                    onChange={changeCategory}
-                />
+        <FormField
+          name='color'
+          type='color'
+          value={category.color}
+          onChange={changeCategory}
+        />
 
-                <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
+        <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
                     Register
-                </Button>
-            </Form>
+        </Button>
+      </Form>
 
-
-            {categories.map(cat => (
-                <>
-                    <Category title={cat.name} color={cat.color} />
-                    <br />
-                </>
-            ))}
-        </PageDefault>
-    )
+      {categories.map(cat => (
+        <>
+          <Category title={cat.name} color={cat.color} />
+          <br />
+        </>
+      ))}
+    </PageDefault>
+  )
 }
 
 export default NewCategory

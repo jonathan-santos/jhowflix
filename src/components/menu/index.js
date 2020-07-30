@@ -7,15 +7,15 @@ import Logo from '../../assets/img/logo.png'
 import './menu.css'
 
 const Menu = () => (
-    <nav className='menu'>
-        <Link to='/'>
-            <img src={Logo} alt='JhowFlix logo' className='logo' />
-        </Link>
+  <nav className='menu'>
+    <Link to='/'>
+      <img src={Logo} alt='JhowFlix logo' className='logo' />
+    </Link>
 
-        <Button as={Link} to='/new-video'>
+    <Button as={Link} to='/new-video'>
             New video
-        </Button>
-    </nav>
+    </Button>
+  </nav>
 )
 
 export default Menu
