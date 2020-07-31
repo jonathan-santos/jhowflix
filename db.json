@@ -14,5 +14,126 @@
         "title": "Video Game",
         "description": "My favorite Videogames, from all ages and genres",
         "color": "#FF1E56"
-    }]
+    }],
+    "videos": [{
+        "id": 1,
+        "categoryId": 1,
+        "title": "Red Hot Chilli Peppers - Dark Necessities",
+        "url": "https://music.youtube.com/watch?v=ZICUilv4KF0&feature=share"
+      },{
+        "id": 2,
+        "categoryId": 1,
+        "title": "Gorillaz - Souk Eye",
+        "url": "https://music.youtube.com/watch?v=ag2LVnpoRpU&feature=share"
+      },{
+        "id": 3,
+        "categoryId": 1,
+        "title": "The Beatles - Don't Let me Down",
+        "url": "https://youtu.be/NCtzkaL2t_Y"
+      },{
+        "id": 4,
+        "categoryId": 1,
+        "title": "Tim Maia - Ela partiu",
+        "url": "https://music.youtube.com/watch?v=syqJAgTQdlU&feature=share"
+      }, {
+        "id": 5,
+        "categoryId": 1,
+        "title": "Alcione - Você me tira do sério",
+        "url": "https://music.youtube.com/watch?v=Zh-YpF3I7w8&feature=share"
+      }, {
+        "id": 6,
+        "categoryId": 1,
+        "title": "Warren Ellis & Nick Cave - Song for Jesse",
+        "url": "https://music.youtube.com/watch?v=bReg7IRq7Lw&feature=share"
+      }, {
+        "id": 7,
+        "categoryId": 1,
+        "title": "David Bowie - Blackstar",
+        "url": "https://music.youtube.com/watch?v=kszLwBaC4Sw&feature=share"
+      }, {
+        "id": 8,
+        "categoryId": 1,
+        "title": "Akira Yamaoka - This sacred line",
+        "url": "https://music.youtube.com/watch?v=r8eaQR4HEAk&feature=share"
+      }, {
+        "id": 9,
+        "categoryId": 1,
+        "title": "Apparat - Goodbye",
+        "url": "https://music.youtube.com/watch?v=C2-YwsEq0-0&feature=share"
+      }, {
+        "id": 10,
+        "categoryId": 1,
+        "title": "Tame Impala - Let it Happen",
+        "url": "https://music.youtube.com/watch?v=NMRhx71bGo4&feature=share"
+      },{
+        "id": 11,
+        "categoryId": 2,
+        "title": "Dark",
+        "url": "https://www.youtube.com/watch?v=6EhDKaWLJgg"
+      },{
+        "id": 12,
+        "categoryId": 2,
+        "title": "The Mentalist",
+        "url": "youtube.com/watch?v=tCpWApgVqbc"
+      },{
+        "id": 13,
+        "categoryId": 2,
+        "title": "Lucifer",
+        "url": "https://www.youtube.com/watch?v=KJsdZYT-Tlk"
+      },{
+        "id": 14,
+        "categoryId": 2,
+        "title": "The Boys",
+        "url": "https://www.youtube.com/watch?v=BxmSk_pv8tE"
+      }, {
+        "id": 15,
+        "categoryId": 2,
+        "title": "House",
+        "url": "https://www.youtube.com/watch?v=dVlQJO4HZj0"
+      },{
+        "id": 16,
+        "categoryId": 3,
+        "title": "Ape Escape",
+        "url": "https://www.youtube.com/watch?v=MdgWnXV4f2k"
+      },{
+        "id": 17,
+        "categoryId": 3,
+        "title": "Super Mario Galaxy",
+        "url": "https://www.youtube.com/watch?v=rmN8DHZYNCg"
+      },{
+        "id": 18,
+        "categoryId": 3,
+        "title": "Donkey Kong - Country Returns",
+        "url": "https://www.youtube.com/watch?v=TMhEs78Zix8"
+      },{
+        "id": 19,
+        "categoryId": 3,
+        "title": "Midnight Club 3: DUB Edition Remix",
+        "url": "https://www.youtube.com/watch?v=eivnVc7yWuY"
+      }, {
+        "id": 20,
+        "categoryId": 3,
+        "title": "Terraria",
+        "url": "https://www.youtube.com/watch?v=w7uOhFTrrq0"
+      }, {
+        "id": 21,
+        "categoryId": 3,
+        "title": "Nier Automata",
+        "url": "https://www.youtube.com/watch?v=wJxNhJ8fjFk"
+      }, {
+        "id": 22,
+        "categoryId": 3,
+        "title": "Metal Gear Solid 3: Snake Eater",
+        "url": "https://www.youtube.com/watch?v=hXUono66wxI"
+      }, {
+        "id": 23,
+        "categoryId": 3,
+        "title": "Skyrim",
+        "url": "https://www.youtube.com/watch?v=JSRtYpNRoN0"
+      }, {
+        "id": 24,
+        "categoryId": 3,
+        "title": "Dark Souls 2",
+        "url": "https://www.youtube.com/watch?v=U6uyuIQYlfY"
+      }]
 }

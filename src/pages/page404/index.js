@@ -1,31 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import { Title, P } from './styles'
 import PageDefault from '../../components/pageDefault'
+import Error from '../../components/error'
 
-const page404 = () => {
-  return (
-    <PageDefault>
-      <Title>404</Title>
-      <P>Sorry, nothing to see here...</P>
-
-      <P>Play a game instead:</P>
-
-      <iframe
-        title='game'
-        src='https://jhow.io/canvasrama/chapter-1-game-prototype/4-game/'
-        frameBorder='0'
-        className='game'
-        width='960'
-        height='545'
-      />
-
-      <br />
-
-      <Link to='/'>Or go to home</Link>
-    </PageDefault>
-  )
-}
+const page404 = () => (
+  <PageDefault>
+    <Error code={404} />
+  </PageDefault>
+)
 
 export default page404

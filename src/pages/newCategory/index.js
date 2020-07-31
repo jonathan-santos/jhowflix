@@ -9,6 +9,7 @@ import Category from '../../components/category'
 import Loading from '../../components/loading'
 
 import useForm from '../../hooks/useForm'
+import { getAllCategories } from '../../repositories/categories'
 
 const NewCategory = () => {
   const initialCategory = {
@@ -20,15 +21,6 @@ const NewCategory = () => {
   const [categories, setCategories] = useState([])
   const { values, handleChange, clearValues } = useForm(initialCategory)
 
-  const getCategories = async () => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categories'
-      : 'https://jhowflix.herokuapp.com/categories'
-    const res = await window.fetch(URL)
-    const categories = await res.json()
-    setCategories(categories)
-  }
-
   const saveNewCategory = async () => {
     setCategories([
       ...categories,
@@ -36,6 +28,11 @@ const NewCategory = () => {
     ])
 
     clearValues()
+  }
+
+  const getCategories = async () => {
+    const allCategories = await getAllCategories()
+    setCategories(allCategories)
   }
 
   useEffect(() => {
