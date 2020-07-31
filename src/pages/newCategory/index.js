@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+
+import Form from './styles'
 
 import PageDefault from '../../components/pageDefault'
 import FormField from '../../components/formField'
 import Button from '../../components/button'
 import Category from '../../components/category'
+import Loading from '../../components/loading'
 
-const Form = styled.form`
-    border: 1px solid var(--white);
-    border-radius: 10px;
-    padding: 0.5rem;
-`
+const initialCategory = {
+  name: '',
+  description: '',
+  color: '#999999'
+}
 
 const NewCategory = () => {
-  const initialCategory = {
-    name: '',
-    description: '',
-    color: '#999999'
-  }
-
-  const [categories, setCategories] = useState([{ title: 'test', description: 'something', color: '#f00' }])
+  const [categories, setCategories] = useState([])
   const [category, setCategory] = useState(initialCategory)
 
   const changeCategory = (e) => {
@@ -36,14 +32,16 @@ const NewCategory = () => {
     setCategory(initialCategory)
   }
 
-  useEffect(() => {
-    const getCategories = async () => {
-      const URL = 'http://localhost:8080/categories'
-      const res = await window.fetch(URL)
-      const categories = await res.json()
-      setCategories(categories)
-    }
+  const getCategories = async () => {
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categories'
+      : 'https://jhowflix.herokuapp.com/categories'
+    const res = await window.fetch(URL)
+    const categories = await res.json()
+    setCategories(categories)
+  }
 
+  useEffect(() => {
     getCategories()
   }, [])
 
@@ -80,13 +78,12 @@ const NewCategory = () => {
         />
 
         <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
-                    Register
+          Register
         </Button>
       </Form>
 
-      <div>
-        Loading...
-      </div>
+      {categories.length === 0 &&
+        <Loading />}
 
       {categories.map((cat, count) => (
         <React.Fragment key={count}>
