@@ -12,8 +12,9 @@ import { getAllCategories } from '../../repositories/categories'
 
 const NewVideo = () => {
   const initialVideo = {
-    title: 'Initial title',
-    url: ''
+    title: '',
+    url: '',
+    categoryId: 0
   }
 
   const [videos, setVideos] = useState([])
@@ -23,7 +24,17 @@ const NewVideo = () => {
   const saveNewVideo = async (e) => {
     e.preventDefault()
 
-    await saveVideo(values)
+    const newVideo = values
+
+    if (typeof (values.categoryId) === 'string') {
+      newVideo.categoryId = parseInt(newVideo.categoryId)
+    }
+
+    if (newVideo.categoryId === 0) {
+      newVideo.categoryId = 1
+    }
+
+    saveVideo(values)
 
     const newVideos = videos
     newVideos.unshift(values)
@@ -78,7 +89,7 @@ const NewVideo = () => {
           required
           options={categories.map(cat => ({ id: cat.id, title: cat.title }))}
           name='categoryId'
-          value={values.categoryId}
+          value={String(values.categoryId)}
           onChange={handleChange}
         />
 

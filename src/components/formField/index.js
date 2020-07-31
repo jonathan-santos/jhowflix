@@ -17,6 +17,7 @@ const FormField = ({ required, value, name, type, onChange, textarea, label, opt
           name={name}
           value={value}
           onChange={onChange}>
+          <option disabled value={0}>Select a option</option>
           {options.map((option, count) => (
             <option value={option.id} key={count}>{option.title}</option>
           ))}
