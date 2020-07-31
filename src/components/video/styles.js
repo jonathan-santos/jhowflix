@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const VideoCardContainer = styled.a`
+const Container = styled.a`
   position: relative;
   border: 2px solid;
   border-radius: 4px;
@@ -30,7 +30,7 @@ export const VideoCardContainer = styled.a`
     background-image: ${({ url }) => `url(${url})`};
     background-size: cover;
     background-position: center;
-    z-index: -1;
+    z-index: 1;
     transition: opacity .3s;
   }
   
@@ -49,3 +49,5 @@ export const VideoCardContainer = styled.a`
     margin-left: 20px;
   }
 `
+
+export default Container

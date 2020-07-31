@@ -45,3 +45,9 @@ a {
     padding-top: var(--bodyPaddingTop);
   }
 }
+
+form {
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  padding: 0.5rem;
+}

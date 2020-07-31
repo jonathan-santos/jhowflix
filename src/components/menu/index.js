@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 import Container, { Logo } from './styles'
 
@@ -13,9 +13,17 @@ const Menu = () => (
       <Logo src={LogoFile} alt='JhowFlix logo' className='logo' />
     </Link>
 
-    <Button as={Link} to='/new-video'>
-            New video
-    </Button>
+    <Route path='/' exact>
+      <Button as={Link} to='/new/video'>
+        New video
+      </Button>
+    </Route>
+
+    <Route path='/new/video' exact>
+      <Button as={Link} to='/new/category'>
+        New category
+      </Button>
+    </Route>
   </Container>
 )
 

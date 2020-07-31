@@ -1,21 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Category from '../../components/category'
+import Container, { SliderItem } from './styles'
 
-import VideoCard from './components/VideoCard'
 import Slider from './components/Slider'
+import Category from '../../components/category'
+import Video from '../../components/video'
 
-import { VideoCardGroupContainer, SliderItem } from './styles'
-
-const VideoCardGroup = ({ ignoreFirstVideo, category }) => {
+const Carousel = ({ ignoreFirstVideo, category }) => {
   const { title, color, extraLink, videos } = category
 
   return (
-    <VideoCardGroupContainer>
-      {title && (
-        <Category title={title} description={extraLink} color={color} />
-      )}
+    <Container>
+      <Category
+        title={title}
+        description={extraLink}
+        color={color}
+      />
 
       <Slider arrowColor={color}>
         {videos.map((video, index) => {
@@ -25,26 +26,26 @@ const VideoCardGroup = ({ ignoreFirstVideo, category }) => {
 
           return (
             <SliderItem key={video.title}>
-              <VideoCard
-                videoTitle={video.title}
-                videoURL={video.url}
+              <Video
+                title={video.title}
+                url={video.url}
                 categoryColor={color}
               />
             </SliderItem>
           )
         })}
       </Slider>
-    </VideoCardGroupContainer>
+    </Container>
   )
 }
 
-VideoCardGroup.defaultProps = {
+Carousel.defaultProps = {
   ignoreFirstVideo: false
 }
 
-VideoCardGroup.propTypes = {
+Carousel.propTypes = {
   ignoreFirstVideo: PropTypes.bool,
   category: PropTypes.object.isRequired
 }
 
-export default VideoCardGroup
+export default Carousel

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import Form from './styles'
-
 import PageDefault from '../../components/pageDefault'
 import FormField from '../../components/formField'
 import Button from '../../components/button'
@@ -13,7 +11,7 @@ import { getAllCategories } from '../../repositories/categories'
 
 const NewCategory = () => {
   const initialCategory = {
-    name: '',
+    title: '',
     description: '',
     color: '#aa0000'
   }
@@ -49,7 +47,7 @@ const NewCategory = () => {
         style={{ marginTop: 0 }}
       />
 
-      <Form onSubmit={saveNewCategory}>
+      <form onSubmit={saveNewCategory}>
         <FormField
           required
           name='name'
@@ -72,9 +70,9 @@ const NewCategory = () => {
         />
 
         <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
-          Register
+          Save
         </Button>
-      </Form>
+      </form>
 
       {categories.length === 0 &&
         <Loading />}

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const VideoCardGroupContainer = styled.section`
+const Container = styled.section`
   color: white;
   min-height: 197px;
   margin-bottom: 16px;
@@ -15,3 +15,5 @@ export const SliderItem = styled.li`
         object-fit: cover;
     }
 `
+
+export default Container
