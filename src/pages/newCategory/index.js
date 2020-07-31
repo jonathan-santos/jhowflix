@@ -8,29 +8,17 @@ import Button from '../../components/button'
 import Category from '../../components/category'
 import Loading from '../../components/loading'
 
-const initialCategory = {
-  name: '',
-  description: '',
-  color: '#999999'
-}
+import useForm from '../../hooks/useForm'
 
 const NewCategory = () => {
+  const initialCategory = {
+    name: '',
+    description: '',
+    color: '#aa0000'
+  }
+
   const [categories, setCategories] = useState([])
-  const [category, setCategory] = useState(initialCategory)
-
-  const changeCategory = (e) => {
-    const { name, value } = e.target
-    setCategory({
-      ...category,
-      [name]: value
-    })
-  }
-
-  const saveNewCategory = (e) => {
-    e.preventDefault()
-    setCategories([...categories, category])
-    setCategory(initialCategory)
-  }
+  const { values, handleChange, clearValues } = useForm(initialCategory)
 
   const getCategories = async () => {
     const URL = window.location.hostname.includes('localhost')
@@ -39,6 +27,15 @@ const NewCategory = () => {
     const res = await window.fetch(URL)
     const categories = await res.json()
     setCategories(categories)
+  }
+
+  const saveNewCategory = async () => {
+    setCategories([
+      ...categories,
+      values
+    ])
+
+    clearValues()
   }
 
   useEffect(() => {
@@ -50,8 +47,8 @@ const NewCategory = () => {
       <h1 style={{ margin: '0.25rem' }}>Register new category: </h1>
 
       <Category
-        title={category.title || 'Initial Name'}
-        color={category.color}
+        title={values.title || 'Initial Name'}
+        color={values.color}
         style={{ marginTop: 0 }}
       />
 
@@ -59,22 +56,22 @@ const NewCategory = () => {
         <FormField
           required
           name='name'
-          value={category.name}
-          onChange={changeCategory}
+          value={values.name}
+          onChange={handleChange}
         />
 
         <FormField
           name='description'
-          value={category.description}
-          onChange={changeCategory}
+          value={values.description}
+          onChange={handleChange}
           textarea
         />
 
         <FormField
           name='color'
           type='color'
-          value={category.color}
-          onChange={changeCategory}
+          value={values.color}
+          onChange={handleChange}
         />
 
         <Button style={{ padding: '0.5rem', backgroundColor: 'var(--black)' }} notMoveable>
