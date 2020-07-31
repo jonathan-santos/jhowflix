@@ -1,29 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Field, { InputContainer, Input, FloatingLabel } from './styles'
+import Field, { InputContainer, Input, FloatingLabel, Options } from './styles'
 
 const capitalizeWord = word => word.charAt(0).toUpperCase() + word.slice(1)
 
-const FormField = ({ required, value, name, type, onChange, textarea }) => (
+const FormField = ({ required, value, name, type, onChange, textarea, label, options }) => (
   <Field>
     <InputContainer>
       {type === 'color' &&
-        <label htmlFor={name}>{capitalizeWord(name)}:</label>}
+        <label htmlFor={name}>{label || capitalizeWord(name)}:</label>}
 
-      <Input
-        as={textarea ? 'textarea' : ''}
-        required={required}
-        name={name}
-        type={type || 'text'}
-        value={value}
-        onChange={onChange}
-        rows={textarea ? 4 : 0}
-      />
+      {options.length > 0
+        ? <Options
+          required={required}
+          name={name}
+          value={value}
+          onChange={onChange}>
+          {options.map((option, count) => (
+            <option value={option.id} key={count}>{option.title}</option>
+          ))}
+        </Options>
+        : <Input
+          as={textarea ? 'textarea' : ''}
+          required={required}
+          name={name}
+          type={type || 'text'}
+          value={value}
+          onChange={onChange}
+          rows={textarea ? 4 : 0}
+        />}
 
-      {type !== 'color' &&
+      {(type !== 'color' && options.length === 0) &&
         <FloatingLabel className={value ? '.has-text' : ''}>
-          {capitalizeWord(name)}
+          {label || capitalizeWord(name)}
         </FloatingLabel>}
     </InputContainer>
   </Field>
@@ -34,7 +44,9 @@ FormField.defaultProps = {
   type: 'text',
   value: '',
   onChange: (e) => {},
-  textarea: false
+  textarea: false,
+  options: [],
+  label: ''
 }
 
 FormField.propTypes = {
@@ -43,7 +55,9 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   onChange: PropTypes.func,
-  textarea: PropTypes.bool
+  textarea: PropTypes.bool,
+  options: PropTypes.array,
+  label: PropTypes.string
 }
 
 export default FormField

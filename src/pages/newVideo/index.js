@@ -7,7 +7,8 @@ import Video from '../../components/video'
 import Loading from '../../components/loading'
 
 import useForm from '../../hooks/useForm'
-import { getAllVideos } from '../../repositories/videos'
+import { getAllVideos, saveVideo } from '../../repositories/videos'
+import { getAllCategories } from '../../repositories/categories'
 
 const NewVideo = () => {
   const initialVideo = {
@@ -16,15 +17,18 @@ const NewVideo = () => {
   }
 
   const [videos, setVideos] = useState([])
+  const [categories, setCategories] = useState([])
   const { values, handleChange, clearValues } = useForm(initialVideo)
 
   const saveNewVideo = async (e) => {
     e.preventDefault()
 
-    setVideos([
-      ...videos,
-      values
-    ])
+    await saveVideo(values)
+
+    const newVideos = videos
+    newVideos.unshift(values)
+
+    setVideos(newVideos)
 
     clearValues()
   }
@@ -34,8 +38,14 @@ const NewVideo = () => {
     setVideos(allVideos.reverse())
   }
 
+  const getCategories = async () => {
+    const allCategories = await getAllCategories()
+    setCategories(allCategories)
+  }
+
   useEffect(() => {
     getVideos()
+    getCategories()
   }, [])
 
   return (
@@ -59,8 +69,16 @@ const NewVideo = () => {
 
         <FormField
           required
-          name='name'
-          value={values.name}
+          name='title'
+          value={values.title}
+          onChange={handleChange}
+        />
+
+        <FormField
+          required
+          options={categories.map(cat => ({ id: cat.id, title: cat.title }))}
+          name='categoryId'
+          value={values.categoryId}
           onChange={handleChange}
         />
 

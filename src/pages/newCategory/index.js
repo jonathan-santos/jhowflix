@@ -7,7 +7,7 @@ import Category from '../../components/category'
 import Loading from '../../components/loading'
 
 import useForm from '../../hooks/useForm'
-import { getAllCategories } from '../../repositories/categories'
+import { getAllCategories, saveCategory } from '../../repositories/categories'
 
 const NewCategory = () => {
   const initialCategory = {
@@ -20,10 +20,12 @@ const NewCategory = () => {
   const { values, handleChange, clearValues } = useForm(initialCategory)
 
   const saveNewCategory = async () => {
-    setCategories([
-      ...categories,
-      values
-    ])
+    await saveCategory(values)
+
+    const newCategories = categories
+    newCategories.unshift(values)
+
+    setCategories(newCategories)
 
     clearValues()
   }
@@ -50,8 +52,8 @@ const NewCategory = () => {
       <form onSubmit={saveNewCategory}>
         <FormField
           required
-          name='name'
-          value={values.name}
+          name='title'
+          value={values.title}
           onChange={handleChange}
         />
 

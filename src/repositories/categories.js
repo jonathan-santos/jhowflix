@@ -10,3 +10,13 @@ export const getAllCategories = async () => {
 export const getAllCategoriesWithVideos = async () => {
   return await fetchData(`${categoriesUrl}?_embed=videos`)
 }
+
+export const saveCategory = async (category) => {
+  return await fetchData(categoriesUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(category)
+  })
+}

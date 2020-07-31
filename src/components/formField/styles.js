@@ -10,6 +10,7 @@ export const InputContainer = styled.label`
     width: 100%;
     display: flex;
     align-items: center;
+    background-color: var(--blackLighter);
 `
 
 export const Input = styled.input`
@@ -17,7 +18,8 @@ export const Input = styled.input`
     height: 100%;
     border-radius: 5px;
     padding-left: 0.5rem;
-    background-color: var(--white);
+    background-color: var(--blackLighter);
+    color: var(--white);
     font-size: 1rem;
 
     &[rows="4"] {
@@ -50,6 +52,18 @@ export const FloatingLabel = styled.label`
     user-select: none;
     font-size: 1.35rem;
     transition: font-size .1s;
+    color: var(--white);
+`
+
+export const Options = styled.select`
+    flex: 1;
+    height: 100%;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+    color: var(--white);
+    background-color: var(--blackLighter);
+    font-size: 1rem;
+    height: 3rem;
 `
 
 export default Field
